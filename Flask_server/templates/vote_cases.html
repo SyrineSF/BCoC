@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Vote Case List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head> 
+<body style="background-image: url(../static/images/log.png);"> 
+
+<div  >
+     
+    <a href="/logout"><button  style="float: right ;  background-color: #35be90;color:#fff"><i class="fa fa-sign-out" style="font-size:36px;"></i>Logout</button></a>
+    <div style="float: left ;">
+      <img src="../static/images/logo1.png" alt="Persona" class="login-img" style="width: 70px;margin-bottom: 100px; " />
+    </div>
+
+  </div>
+  <div class="wrap">
+    <div class="image">
+      
+    </div>
+  <div class="wrap" style=" display: block;
+ float:center; margin-left:60px;width:600px ; ">
+
+<div  style="margin-top:200px;">
+    <div class="table-wrapper">
+    <table class="fl-table">
+        <tr>
+            <th>Created By</th>
+            <th>Created At</th>
+            <th>File Hash</th>
+            <th>Vote</th>
+        </tr>
+        {%for x in cases%}
+        <tr>
+            <td>{{x["created_by"]}}</td>
+            <td>{{x["created_at"]}}</td>
+            <td>{{x["file_hash"]}}</td>
+            <td><a href="/vote_case/{{x['index']}}"><button style="float: right ;  background-color: #35be90;color:#fff">Vote</button></a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    </div>
+</div>
+    
+  </div>
+
+</body>
+</html>
+
+    <body>
+
+    </body>
+</html>

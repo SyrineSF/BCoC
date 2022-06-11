@@ -1,0 +1,184 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  background-color: #4560c2;
+}
+
+
+
+/* Wrap */
+
+.wrap {
+  display: flex;
+}
+
+
+
+/* Section Image */
+
+.image {
+  display: none;
+}
+
+
+/* Section Login */
+
+.login {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.login-img {
+  width: 400px;
+}
+
+.login-title {
+  font-size: 3em;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.form-label {
+  color: rgba(0,0,0,.4);
+  font-weight: 600;
+  position: absolute;
+  margin-bottom: .6em;
+}
+
+.form-input {
+  color: rgba(0,0,0,.8);
+  font-weight: 600;
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+  padding: 1.2em 0 .8em 0;
+  transition: all 300ms;
+  background-color: #012d1e;
+  
+}
+
+.form-input:focus, .form-input:active {
+  outline: none;
+  padding-top: 2em;
+ 
+}
+
+
+
+.login-forgod {
+  text-align: right;
+
+}
+
+.login-forgod a {
+  color: rgba(0,0,0,.6);
+  text-decoration: none;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+.login-submit {
+  margin-top: 1em;
+  font-family: inherit;
+  letter-spacing: .1em;
+  width: 100%;
+  height: 35px;
+  border-radius: 35px;
+  border: none;
+  background-color: #1989FF;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.login-submit:hover {
+  opacity: .9;
+}
+
+.table-wrapper{
+  margin: 10px 70px 70px;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color:  #35be90;
+}
+
+.fl-table td, .fl-table th {
+  text-align: center;
+  padding: 8px;
+}
+
+.fl-table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 12px;
+}
+
+.fl-table thead th {
+  color: #ffffff;
+  background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+  background: #F8F8F8;
+}
+
+
+/* Desktop */
+@media screen and (min-width: 960px) {
+
+  /* Wrap */
+  .wrap {
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Image */
+  .image {
+    display: block;
+  }
+
+  .image .image-man {
+    height: 60vh;
+  }
+
+  /* Section Login */
+
+  .login {
+    position: static;
+    transform: translate(0);
+  }
+
+}

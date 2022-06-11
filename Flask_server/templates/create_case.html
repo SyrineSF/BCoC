@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Creat Case</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head> 
+<body style="background-image: url(../static/images/log.png);"> 
+
+<div  >
+     
+    <div style="float: left ;">
+      <img src="../static/images/logo1.png" alt="Persona" class="login-img" style="width: 70px;margin-bottom: 100px; " />
+    </div>
+
+  </div>
+  <form method="post"  enctype="multipart/form-data" class="login-form" style="margin-left:800px;">
+    <div class="form-group">
+      <label for="username" style="color:#fff ;"> <h1>
+        Case start date
+      </h1></label>
+      <button type="button" class="login-submit" style=" background-color: #35be90;;color:#fff" >{{date}}</button>
+    </div>
+    <div class="form-group">
+      <label for="username" style="color:#fff ;"> <h1>
+        <h1>
+          Case creator
+        </h1>
+      </h1></label>
+      <button type="button" class="login-submit" style=" background-color: #35be90;;color:#fff" >{{username}}</button>
+    </div>
+ 
+  <br></br>
+  
+  <h2 style="color:#fff ;">
+    Description of the evidence
+  </h2>
+  
+
+
+
+
+
+    <div class="form-group">
+      
+       
+        <textarea name="description" style="width :300px;height:300px; " >
+
+        </textarea>
+    </div>
+  <h2 style="color:#fff ;">
+   Upload evidence
+    </h2>
+      <div class="form-group">
+        <input type="file" name="file" autocomplete="off" required id="" />
+         
+         
+      </div>
+     <br></br> 
+      <button type="submit" class="login-submit" style="width : 300px ;background-color: #35be90;">Submit</button>
+
+   </form>
+</body>
+</html>
