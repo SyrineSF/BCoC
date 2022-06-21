@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, session, redirect, url_for, request
 from Bleuprints.auth import investigator_required, login_required
 from pymongo import MongoClient
-from services.util import update_old_description, approve_vote, denie_vote, get_case, get_description_index, get_form_to_dict, get_lastDesc, update_description, get_description, change_status_approve, change_status_denied, hash_file
+from services.util import send_email, update_old_description, approve_vote, denie_vote, get_case, get_description_index, get_form_to_dict, get_lastDesc, update_description, get_description, change_status_approve, change_status_denied, hash_file
 from wtforms import FileField, SubmitField
 from wtforms.validators import InputRequired
 from flask_wtf import FlaskForm
@@ -134,17 +134,20 @@ def vote_case(id):
     descriptions = []
     case = get_lastDesc(id)
     case_desc = case[4]
+    first = case[0].split(' ')[0]
+    last = case[0].split(' ')[1]
+    send_to = db['users'].find_one({"first_name": first, "last_name": last})["email"]
     if case[5] >= db['users'].count_documents({"accountType": "investigator"}):
         if case[3] > case[4]:
             change_status_approve(id)
             db["files"].update_one({"index":int(id)}, {"$unset": {"user" : ""}})
-            """email aprrove"""
+            send_email("raport approved", "your raport have been approved", send_to)
 
         else:
             change_status_denied(id)
             db["files"].update_one({"index":int(id)}, {"$unset": {"user" : ""}})
+            send_email("raport denied", "your raport have been denied", send_to)
 
-            """email denied"""
     case = get_case(int(id))
 
     if case[3] != "pending":

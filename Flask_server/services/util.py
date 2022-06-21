@@ -3,6 +3,8 @@ from uuid import uuid4
 import json
 from web3 import Web3
 import hashlib
+from flask_mail import Mail, Message
+from flask import current_app
 
 """ ganache contract setup """
 ganache_url = "http://127.0.0.1:7545"
@@ -104,3 +106,11 @@ def hash_file(filename):
 
    # return the hex representation of digest
    return h.hexdigest()
+
+
+def send_email(subject, message, reciver):
+    with current_app.app_context():
+        mail = Mail()
+        msg = Message(subject, sender = 'hidoussiabdou5@gmail.com', recipients = [reciver])
+        msg.body = message
+        mail.send(msg)
